@@ -14,11 +14,13 @@
 }
 
 .cards {
-    width: 100vw;
+    width: 100%;
     padding-top: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
 .MovieDetails {
