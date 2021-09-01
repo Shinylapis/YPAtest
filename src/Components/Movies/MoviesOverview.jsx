@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './Movies.scss'
+import MovieDetails from '../MovieDetails/MovieDetails';
+import './MoviesOverview.scss'
 
-function Movies() {
+function MoviesOverview() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
@@ -51,21 +52,13 @@ function Movies() {
                             <h1>{item.Title}</h1>
                         </div>
                     ))}
-                    {selectedItem.Title && <div className='MovieDetails'>
-                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                            <h1 className='MovieDetailsTitle'>{selectedItem.Title}</h1>
-                            <div className='MovieDetailsCross' onClick={() => setSelected(null)}>X</div>
-                        </div>
-                        <h5>{selectedItem.Plot}</h5>
-                        <a href={`https://www.imdb.com/title/${selectedItem.imdbID}`}>Link</a>
-                        <img src={console.log(selectedItem), selectedItem.Poster} />
-                    </div>}
+                    {selectedItem.Title && <MovieDetails movie={selectedItem}/>}
                 </div>
                 <div>
-                    <button onClick={()=>setPage(page > 1 ?  page - 1 : 1)}>
-                        Previues 
+                    <button disabled={page===1} onClick={()=>setPage(page > 1 ?  page - 1 : 1)}>
+                        Previous 
                     </button>
-                    <button onClick={()=>setPage(page < 19 ? page + 1 : 19)}>
+                    <button disabled={page===19} onClick={()=>setPage(page < 19 ? page + 1 : 19)}>
                         Next
                     </button>
                 </div>
@@ -74,4 +67,4 @@ function Movies() {
         )
     }
 }
-export default Movies
+export default MoviesOverview

@@ -1,6 +1,6 @@
 import './App.scss';
 import Header from './Components/Header/Header';
-import Movies from './Components/Movies/Movies';
+import Movies from './Components/Movies/MoviesOverview';
 
 function App() {
   return (

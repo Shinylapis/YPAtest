@@ -23,22 +23,3 @@
     
 }
 
-.MovieDetails {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-    padding: 10px;
-    background-color: #668;
-    width: 300px;
-    border-radius: 5px;
-
-    &Cross {
-        color: red;
-        margin: 5px;
-    }
-
-    &Title {
-        width: 90%;
-    }
-}
-
